@@ -3,9 +3,9 @@ import Slide from "react-reveal";
 
 const Resume = () => {
     return (
-    <section id="resume" className='py-40'>
-        <div className="p-10 dark:bg-gray-900 md:px-20 lg:max-w-8xl container">
+    <section id="resume">
             <Slide left duration={1300}>
+            <div className="p-10 dark:bg-gray-900 md:px-20 lg:max-w-8xl container py-52">
                 <div className="grid grid-cols-1 gap-y-4 py-8 first:pt-0 last:pb-0  md:grid-cols-4">
                     <div className="col-span-1 flex justify-center md:justify-start pb-10">
                         <div className="relative h-max">
@@ -78,8 +78,8 @@ const Resume = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </Slide>
-        </div>
       </section>
     )
 }

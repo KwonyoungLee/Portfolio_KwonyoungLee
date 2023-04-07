@@ -1,10 +1,36 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Fade, Slide} from "react-reveal";
 import { IoIosMail } from "react-icons/io";
-import {FC, memo, useCallback, useMemo, useState} from 'react';
 
 
 const Contact = () => {
+    const [values, setValues] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const {name, email,  message } = values;
+
+    const handleChange = e => {
+        setValues({ ...values, [e.target.name]: e.target.value });}
+    
+    const handleSubmit = async e => {
+        e.preventDefault()
+
+        try{
+            await fetch('http://localhost:3000/api/contact', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(values),
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     const inputClasses =
     'bg-neutral-700 h-14 w-4/5 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-pink-600 rounded-md placeholder:text-neutral-400 placeholder:text-2xl text-neutral-200 text-2xl';
 
@@ -23,13 +49,12 @@ const Contact = () => {
                 <Slide left duration={1000}>
                 <div>
                     <div>
-                        <form className="grid min-h-[320px] gap-y-4 lg:min-w-[1000px] md:min-w-[600px] sm:min-w-[400px]">
-                            <fieldset>
+                        <form method="post" onSubmit={handleSubmit} className="grid min-h-[320px] gap-y-4 lg:min-w-[1000px] md:min-w-[600px] sm:min-w-[400px]">
                                 <div className="py-8 font-semibold flex justify-between">
                                     <label htmlFor="contactName" className="text-white text-3xl">
                                     Name <span className="text-blue-700">*</span>
                                     </label>
-                                    <input className={inputClasses} name="name" required type="text" />
+                                    <input className={inputClasses} name="name" value={name} onChange={handleChange} required type="text" />
                                 </div>
                                 <div className="py-8 font-semibold flex justify-between">
                                     <label htmlFor="contactEmail" className="text-white text-3xl">
@@ -39,18 +64,10 @@ const Contact = () => {
                                         autoComplete="email"
                                         className={inputClasses}
                                         name="email"
+                                        value={email}
+                                        onChange={handleChange}
                                         required
                                         type="email"
-                                    />
-                                </div>
-                                <div className="py-8 font-semibold flex justify-between">
-                                    <label htmlFor="contactSubject" className="text-white text-3xl">Subject</label>
-                                    <input
-                                        autoComplete="subject"
-                                        className={inputClasses}
-                                        name="subject"
-                                        required
-                                        type="text"
                                     />
                                 </div>
                                 <div className="py-8 font-semibold flex justify-between">
@@ -61,6 +78,8 @@ const Contact = () => {
                                         className={messageClass}
                                         maxLength={250}
                                         name="message"
+                                        value={message}
+                                        onChange={handleChange}
                                         required
                                         rows={6}
                                     />
@@ -71,9 +90,8 @@ const Contact = () => {
                                         className="w-max rounded-full border-2 border-pink-600 bg-stone-900 px-4 py-2 text-2xl font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
                                         type="submit">
                                         Send Message
-                                    </button>
+                                </button>
                                 </div>
-                            </fieldset> 
                         </form>                                                         
                     </div>
                 </div>

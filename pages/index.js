@@ -19,7 +19,7 @@ export default function Home() {
         <meta name="description" content="Kwonyoung Lee's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="smooth">
         <Header />
         <About />
         <Resume />

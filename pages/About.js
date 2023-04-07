@@ -1,9 +1,13 @@
 import React from 'react'
+import Bounce from 'react-reveal'
+
 
 const About = () => {
     return (
-    <section id="about" className='py-40 bg-[#000524]'>
-          <div className="p-10 dark:bg-gray-900 md:px-20 lg:max-w-7xl text-white container">
+    <section id="about">
+      <div className="py-40 bg-[#000524]">
+      <Bounce right>
+          <div className="p-10 md:px-20 lg:max-w-7xl text-white container">
             <div>
               <h2 className="font-bold text-3xl py-2">About Me</h2>
               <p className="pt-3 pb-5 leading-loose">Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.</p>
@@ -25,13 +29,15 @@ const About = () => {
                   </p>
                 </div>
                 <div>
-                  <p>
-                    <button className="bg-red-800 hover:bg-pink-600 ...">Download Resume</button>
-                  </p>
+                  <a href="Kwonyoung Lee.pdf" download="Kwonyoung Lee Resume.pdf">
+                    <button className="bg-pink-600 hover:bg-purple-600 rounded-lg h-12 px-6 m-2">Download Resume</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+      </Bounce>
+      </div>
     </section>
     )
 }
