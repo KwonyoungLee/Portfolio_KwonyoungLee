@@ -114,7 +114,7 @@ const Header = () => {
         </div>
       <Fade bottom duration={1200}>
             <div className="text-center p-10 pt-56">
-              <h2 className="text-5xl py-2 text-white font-bold md:text-6xl lg:text-8xl">
+              <h2 className="text-5xl py-2 text-white font-bold md:text-6xl lg:text-7xl">
                 Kwonyoung Lee
               </h2>
               <h3 className="text-2xl py-2 text-gray-400 md:text-3xl">

@@ -23,13 +23,20 @@ export default (req, res) => {
 
    const data= {
     to: 'anna@kwonyounglee.com',
-    from: 'anna@kwonyounglee.com',
+    from: 'hi@kwonyounglee.com',
     subject: subject,
     text: message,
     html: message.replace(/\r\n/g, '<br>')
    };
+   mail
+   .send(data)
+   .then(() => {
+     console.log('Email sent')
+   })
+   .catch((error) => {
+     console.error(error)
+   })
 
-
-   mail.send(data);
   res.status(200).json({ status: 'ok'})
+
 }
