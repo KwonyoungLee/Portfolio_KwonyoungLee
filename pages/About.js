@@ -10,7 +10,16 @@ const About = () => {
           <div className="p-10 md:px-20 lg:max-w-7xl text-white container">
             <div>
               <h2 className="font-bold text-3xl py-2">About Me</h2>
-              <p className="pt-3 pb-5 leading-loose">Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.</p>
+              <p className="pt-3 pb-5 leading-loose">
+                Hello, my name is Kwonyoung Lee and I am a passionate front-end developer and data analyst. 
+                I am able to create visually engaging and user-friendly websites that are optimized 
+                for a positive user experience. My attention to detail and understanding of 
+                user behavior allow me to create interfaces that are effective and engaging.
+                I am also skilled at gathering, cleaning, and analyzing data from various sources, 
+                including databases. I am able to develop meaningful insights and recommendations
+                based on my analysis that can inform business decisions and drive performance.
+                
+              </p>
               <div>
                 <div>
                   <h2 className="font-bold text-3xl py-2">Contact Details</h2>

@@ -6,13 +6,13 @@ import { BsLinkedin, BsInstagram, BsGithub } from "react-icons/bs";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
-import {Link} from "react-scroll"
 
 
 const Header = () => {
 
+
   
-  const [homeClick, sethClick] = useState(false)
+  const [homeClick, sethClick] = useState(true)
   const [aboutClick, setaClick] = useState(false)
   const [resumeClick, setrClick] = useState(false)
   const [worksClick, setwClick] = useState(false)
@@ -112,9 +112,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </section>
       <Fade bottom duration={1200}>
-      <section>
             <div className="text-center p-10 pt-56">
               <h2 className="text-5xl py-2 text-white font-bold md:text-6xl lg:text-8xl">
                 Kwonyoung Lee
@@ -123,7 +121,11 @@ const Header = () => {
                 Front-End Developer and Data Analysist.
               </h3>
               <p className="text-md py-5 leading-8 text-gray-400 max-w-xl mx-auto md:text-xl">
-                I am a front-end development engineer and also data analysist.
+                I am a creative and analytical individual with a passion for technology and data. 
+                I am always seeking to expand my knowledge and skills in order to create better 
+                and more effective digital solutions. 
+                I am excited about the opportunity to work with like-minded individuals 
+                and organizations who share my passion for innovation and excellence.
               </p>
               <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
                     <a href='https://www.linkedin.com/in/anna-lee-194478192/'>
@@ -140,8 +142,8 @@ const Header = () => {
                 <Image src={Kwon}/>
               </div>
             </div>
+            </Fade>
         </section>
-        </Fade>
         <div className="absolute inset-x-0 flex justify-center bottom-0">
                     <div className="rounded-full animate-bounce bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
                     >
