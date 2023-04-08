@@ -17,7 +17,7 @@ const Resume = () => {
                         <div>
                             <h2 className="text-4xl  font-bold  text-neutral-800">University of Texas at Dallas</h2>
                             <p className="italic font-semibold text-3xl py-5 text-neutral-600">
-                                Master's in Computer Science <span>&bull;</span>
+                                Master&apos;s in Computer Science <span>&bull;</span>
                                 <em className="text-lg">August 2021 - May 2023</em>
                             </p>
                             <p className="py-8 text-2xl text-neutral-500">Cousework: Big Data Management, Database System, Machine Learning, Web Programming Languages</p>
@@ -25,7 +25,7 @@ const Resume = () => {
                         <div>
                             <h2 className="text-4xl font-bold  text-neutral-800">University of Texas at Dallas</h2>
                             <p className="italic font-semibold text-3xl py-5  text-neutral-600">
-                                Bachelor's in Computer Science <span>&bull;</span>
+                                Bachelor&apos;s in Computer Science <span>&bull;</span>
                                 <em className="text-lg">August 2018 - May 2021</em>
                             </p>
                             <p className="py-8 text-2xl text-neutral-500">Cousework: Advanced Algorithm Design & Analysis, Database System, Human Computer Interaction</p>

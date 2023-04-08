@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="font-sans text-2xl subpixel-antialiased">
       <Head>
-        <title>Kwonyoung Lee's Portfolio</title>
+        <title>Kwonyoung Lee&apos;s Portfolio</title>
         <meta name="description" content="Kwonyoung Lee's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
