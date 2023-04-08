@@ -4,31 +4,19 @@ import { IoIosMail } from "react-icons/io";
 
 
 const Contact = () => {
-    const [values, setValues] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-
-    const {name, email,  message } = values;
-
-    const handleChange = e => {
-        setValues({ ...values, [e.target.name]: e.target.value });}
     
-    const handleSubmit = async e => {
-        e.preventDefault()
-
-        try{
-            await fetch('http://localhost:3000/api/contact', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
-            });
-        } catch (err) {
-            console.log(err);
-        }
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const formData = {}
+        Array.from(e.currentTarget.elements).forEach(field => {
+            if ( !field.name ) return;
+            formData[field.name] = field.value;
+        });
+        fetch('api/mail', {
+            method: 'post',
+            body: JSON.stringify(formData)
+        })
+        console.log(formData);
     }
 
     const inputClasses =
@@ -51,35 +39,41 @@ const Contact = () => {
                     <div>
                         <form method="post" onSubmit={handleSubmit} className="grid min-h-[320px] gap-y-4 lg:min-w-[1000px] md:min-w-[600px] sm:min-w-[400px]">
                                 <div className="py-8 font-semibold flex justify-between">
-                                    <label htmlFor="contactName" className="text-white text-3xl">
+                                    <label htmlFor="name" className="text-white text-3xl">
                                     Name <span className="text-blue-700">*</span>
                                     </label>
-                                    <input className={inputClasses} name="name" value={name} onChange={handleChange} required type="text" />
+                                    <input className={inputClasses} name="name" required type="text" />
                                 </div>
                                 <div className="py-8 font-semibold flex justify-between">
-                                    <label htmlFor="contactEmail" className="text-white text-3xl">
+                                    <label htmlFor="email" className="text-white text-3xl">
                                         Email <span className="text-blue-700">*</span>
                                     </label>
                                     <input
                                         autoComplete="email"
                                         className={inputClasses}
                                         name="email"
-                                        value={email}
-                                        onChange={handleChange}
                                         required
                                         type="email"
                                     />
                                 </div>
                                 <div className="py-8 font-semibold flex justify-between">
-                                    <label htmlFor="contactMessage" className="text-white text-3xl">
+                                    <label htmlFor="subject" className="text-white text-3xl">
+                                        Subject
+                                    </label>
+                                    <input
+                                        autoComplete="subject"
+                                        className={inputClasses}
+                                        name="subject"
+                                    />
+                                </div>
+                                <div className="py-8 font-semibold flex justify-between">
+                                    <label htmlFor="message" className="text-white text-3xl">
                                     Message <span className="text-blue-700">*</span>
                                     </label>
                                     <textarea
                                         className={messageClass}
                                         maxLength={250}
                                         name="message"
-                                        value={message}
-                                        onChange={handleChange}
                                         required
                                         rows={6}
                                     />
@@ -88,7 +82,7 @@ const Contact = () => {
                                     <button
                                         aria-label="Submit contact form"
                                         className="w-max rounded-full border-2 border-pink-600 bg-stone-900 px-4 py-2 text-2xl font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
-                                        type="submit">
+                                        >
                                         Send Message
                                 </button>
                                 </div>
