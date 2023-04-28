@@ -118,7 +118,7 @@ const Header = () => {
                 Kwonyoung Lee
               </h2>
               <h3 className="text-2xl py-2 text-gray-400 md:text-3xl">
-                Front-End Developer and Data Analysist.
+                Software Engineer
               </h3>
               <p className="text-md py-5 leading-8 text-gray-400 max-w-xl mx-auto md:text-xl">
                 I am a creative and analytical individual with a passion for technology and data. 

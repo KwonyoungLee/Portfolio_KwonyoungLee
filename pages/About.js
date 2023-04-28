@@ -11,7 +11,7 @@ const About = () => {
             <div>
               <h2 className="font-bold text-3xl py-2">About Me</h2>
               <p className="pt-3 pb-5 leading-loose">
-                Hello, my name is Kwonyoung Lee and I am a passionate front-end developer and data analyst. 
+                Hello, my name is Kwonyoung Lee and I am a passionate software developer. 
                 I am able to create visually engaging and user-friendly websites that are optimized 
                 for a positive user experience. My attention to detail and understanding of 
                 user behavior allow me to create interfaces that are effective and engaging.
